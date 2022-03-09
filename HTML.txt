@@ -3,7 +3,7 @@ HTML-HYPERTEXT MARKUP LANGUAGE- DESIGN THE STRUCTURE OF THE WEB PAGE
 HEAD
 BODY
 
--->HTML 5
+-->HTML 5 Demo
 
 -->Bootstrap->framework-responsive webpage
 -->Bootstrap 5-> Vannila js
