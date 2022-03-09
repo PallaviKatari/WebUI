@@ -1,0 +1,21 @@
+HTML-HYPERTEXT MARKUP LANGUAGE- DESIGN THE STRUCTURE OF THE WEB PAGE
+->2 PARTS
+HEAD
+BODY
+
+-->HTML 5
+
+-->Bootstrap->framework-responsive webpage
+-->Bootstrap 5-> Vannila js
+-->Bootstrap 4->jQuery
+-->cdn--><script><link>
+
+->container
+->container-fluid
+->jumbotron
+->row(12 columns in a row)
+->col(xs,sm,md,lg)
+->button(default,primary,info,danger,warning<-contextual classes)
+->table
+->alert(alert alert-primary alert dismissible fade show)
+->badge
