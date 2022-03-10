@@ -1,0 +1,192 @@
+body 
+{
+  background-image: url("images/img3.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  color:blue;
+}
+
+h1 
+{
+  color: navy;
+  text-align: center;
+}
+
+h6
+{
+    text-align: right;
+    color: aquamarine;
+    background: #FC5C7D;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    font-size: large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-variant: small-caps;
+    
+}
+
+ul li
+{
+color: red;
+}
+
+ol li
+{
+color:chartreuse
+}
+
+dl dt
+{
+    color:darkgreen;
+}
+
+dl dd
+{
+    color: aqua;
+}
+
+a
+{
+    color: aqua;
+    font-size: larger;
+    text-decoration-color: blue;
+
+}
+
+table caption
+{
+    color: brown;
+}
+
+table thead
+{
+    color: blueviolet;
+}
+table td
+{
+    color: antiquewhite;
+}
+p
+{
+    color: darkorange;
+}
+
+#pid
+{
+    color: blueviolet;
+    text-shadow: 
+    5px 3px 2px red, 
+    7px 4px 2px rgb(229, 255, 0),
+    3px 2px 2px rgb(0, 4, 255);
+}
+
+.cid
+{
+    color: yellow;
+}
+
+h2,h3
+{
+    background-color: azure;
+    color: aquamarine;
+
+}
+
+.border
+{
+    background-color: blueviolet;
+    opacity: 0.3;
+    outline-style: groove;
+    outline-color: aqua;
+    outline-offset: 2px;
+    border-style:dotted solid ridge inset;
+    border-color: blue yellow greenyellow red;
+    border-radius: 3px 5px 10px 5px;
+}
+
+h4::first-letter
+{
+color: blueviolet;
+
+}
+h4::first-line
+{
+    color: yellow;
+}
+
+::selection
+{
+    color: pink;
+}
+
+::marker
+{
+    color:aqua
+}
+
+h1::after
+{
+    content:url("images/img6.jpg");
+}
+
+div{
+    height: 100px;
+    width: 100px;
+    background: #40E0D0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    color:rgb(115, 255, 0);
+    box-shadow: 5px 2px 3px red,
+    7px 4px 3px rgb(255, 0, 242);
+}
+
+/*.eff
+{
+    transition: width 5s;
+    transition: height 3s ease-in-out;
+}*/
+.eff
+{
+    height:50px;
+    width:50px;
+    transition: width 1s,height 1s,transform 2s;
+}
+
+.eff:hover
+{
+    height:70px;
+    width:70px;
+    transform: rotate(360deg);
+}
+
+.ani
+{
+    height:50px;
+    width:50px;
+    position:relative;
+    animation-name: ibm;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes ibm
+{
+    0% {  background-color:green; left:50px;}
+    25%{ background-color:rgb(235, 80, 19);bottom:100px;}
+    50%{ background-color:rgb(128, 0, 70);bottom: 30px;}
+    75%{ background-color:rgb(217, 230, 217);right:30px}
+    100%{ background-color:rgb(13, 0, 128);top:20px}
+}
+
+.fl
+{
+    float:right;
+}
+
+
+
+
+

@@ -19,3 +19,6 @@ BODY
 ->table
 ->alert(alert alert-primary alert dismissible fade show)
 ->badge
+
+CSS- EXTERNAL,INTERNAL,INLINE
+SELECTOR- ELEMENT,CLASS,ID,GROUP,UNIVERSAL
