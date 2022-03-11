@@ -178,3 +178,32 @@ insert into two1 values(102,'Testing',7)
  select o.id,o.name,t.did,t.dname from one1 o full join two1 t on o.id=t.eid;
  select o.id,o.name,t.did,t.dname from one1 o left join two1 t on o.id=t.eid;
  select o.id,o.name,t.did,t.dname from one1 o right join two1 t on o.id=t.eid;
+
+ --Aggregate functions
+--min , max, avg,sum, count
+
+select * from one1
+
+select max(salary) as 'Maximum Salary' from one1
+select max(salary) as MaximumSalary from one1
+select max(salary),min(salary),count(salary),sum(salary),avg(salary) from one1
+
+insert into one1 values(6,'John','HR',29456)
+insert into one1 values(7,'John1','Dev',23454)
+insert into one1 values(8,'John2','Des',23756)
+insert into one1 values(9,'John3','Test',28456)
+insert into one1 values(10,'John4','HR',22456)
+
+select max(salary) from one1
+
+--group by clause-->aggregate functions
+select max(salary),designation,name from one1 group by designation,name
+
+select * from one1
+
+--order by clause
+
+select * from one1 order by salary desc
+
+select * from one1 order by designation,salary 
+
