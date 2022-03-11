@@ -207,3 +207,66 @@ select * from one1 order by salary desc
 
 select * from one1 order by designation,salary 
 
+--Function-subprogram->perform an action
+--Pre-defined
+--User-defined
+	-->Scalar - return a single value
+	-->inline table value - return table - single statement
+	-->Multi-statement table value - multiple statements - returns table
+
+-->Scalar
+use ibm
+
+create function cal_cube(@a int)
+returns int
+as
+	begin
+		return @a*@a*@a
+	end
+
+select dbo.cal_cube(2) as Result
+
+create function cal_age(@dob date)  
+returns int
+as
+	begin
+		declare @age int
+		set @age=DATEDIFF(year,@dob,GETDATE())
+		return @age
+	end
+
+select dbo.cal_age('01/01/2000') as Age
+
+select * from IBMTrainees
+-->Inline table value 
+create function Fun_des(@desig varchar(25))
+returns table
+as
+	return(select * from IBMTrainees where Designation=@desig)
+
+select * from Fun_des('HR')
+select * from Fun_des('Developer')
+
+-->multi-statement table valued
+create function Fun_IBMT()
+returns @tbl table(TraineeID int, TraineeName varchar(25))
+as	
+	begin
+		insert into @tbl
+		select TID,TName from IBMTrainees;
+		return
+	end
+
+select * from Fun_IBMT()
+
+--Stored Procedure- Group of one or more pre-compiled queries(improve performance)
+
+-->Pre and User-defined
+
+create procedure sp_IBMDES
+as
+	begin
+		select Designation from IBMTrainees
+	end
+
+exec sp_IBMDES
