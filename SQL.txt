@@ -104,3 +104,77 @@ delete from demo where id=1
 truncate table demo
 
 drop table demo
+
+--Joins
+--combining records from two or more table based on a common column
+--inner join,right outer join,left outer join ,full outer join,cross join
+
+create table one
+(
+id int primary key,
+name varchar(25),
+designation varchar(25),
+salary int
+)
+
+create table two
+(
+did int primary key,
+dname varchar(25),
+eid int foreign key references one(id)
+)
+
+insert into one values(1,'John','HR',29456)
+insert into one values(2,'John1','Dev',23454)
+insert into one values(3,'John2','Des',23756)
+insert into one values(4,'John3','Test',28456)
+insert into one values(5,'John4','HR',22456)
+
+insert into two values(100,'Developer',1)
+insert into two values(101,'Designer',4)
+insert into two values(102,'Testing',5)
+
+ select * from one;
+ select * from two;
+
+ --inner join
+
+ select o.id,o.name,t.did,t.dname from one o inner join two t on o.id=t.eid;
+ select o.id,o.name,t.did,t.dname from one o left join two t on o.id=t.eid;
+ select o.id,o.name,t.did,t.dname from one o right join two t on o.id=t.eid;
+ select o.id,o.name,t.did,t.dname from one o full join two t on o.id=t.eid;
+ select * from one;
+ select * from two;
+
+ create table one1
+(
+id int,
+name varchar(25),
+designation varchar(25),
+salary int
+)
+
+create table two1
+(
+did int,
+dname varchar(25),
+eid int 
+)
+
+insert into one1 values(1,'John','HR',29456)
+insert into one1 values(2,'John1','Dev',23454)
+insert into one1 values(3,'John2','Des',23756)
+insert into one1 values(4,'John3','Test',28456)
+insert into one1 values(5,'John4','HR',22456)
+
+insert into two1 values(100,'Developer',1)
+insert into two1 values(101,'Designer',6)
+insert into two1 values(102,'Testing',5)
+insert into two1 values(102,'Testing',7)
+
+ select * from one1;
+ select * from two1;
+
+ select o.id,o.name,t.did,t.dname from one1 o full join two1 t on o.id=t.eid;
+ select o.id,o.name,t.did,t.dname from one1 o left join two1 t on o.id=t.eid;
+ select o.id,o.name,t.did,t.dname from one1 o right join two1 t on o.id=t.eid;
