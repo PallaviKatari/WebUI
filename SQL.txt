@@ -1,0 +1,41 @@
+--Database-Collection of tables
+--Syntax for Database
+create database IBM
+use IBM
+
+--create table
+--Set of Rules->Constraints
+--Primary key,Foreign key,Check,default,unique,not null
+create table IBMTrainees
+(
+TID int Primary key,
+TName varchar(25) Unique not null,
+Designation varchar(25) default 'Trainee',
+Age int check(Age<24)
+)
+--DML and DDL statements
+--Statements->DML(data manipulation language)--insert,update,delete,truncate
+--DDL(data definition language)--create,alter,drop
+--DQL-data query language-Select
+--DCL-Data control language-Grant,Revoke
+--TCL-Transaction control language-Commit,Rollback,Savepoint
+
+--INSERT
+insert into IBMTrainees values(1,'John','HR',22)
+insert into IBMTrainees values(2,'Peter','HR',23)
+insert into IBMTrainees values(3,'Sam','Developer',22)
+insert into IBMTrainees(TID,TName,Age) values(4,'Jancy',22)
+
+
+--SELECT
+Select * from IBMTrainees
+Select TID,TName from IBMTrainees
+Select * from IBMTrainees where Designation='HR'
+Select * from IBMTrainees where AGE<23
+Select * from IBMTrainees where AGE<23 and Designation='Developer'
+Select * from IBMTrainees where TName like 'J%'
+Select * from IBMTrainees where TName like '_a%'
+Select * from IBMTrainees where TName like '%y'
+Select * from IBMTrainees where TName like '[A-J]%'
+Select * from IBMTrainees where TName not like '[A-J]%'
+Select * from IBMTrainees where age between 20 and 22
