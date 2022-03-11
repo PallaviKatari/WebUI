@@ -39,3 +39,68 @@ Select * from IBMTrainees where TName like '%y'
 Select * from IBMTrainees where TName like '[A-J]%'
 Select * from IBMTrainees where TName not like '[A-J]%'
 Select * from IBMTrainees where age between 20 and 22
+
+use IBM
+
+--Foreign key
+
+--Department (Primary)
+create table dept
+(
+Dno int Primary key,
+Dname varchar(25),
+)
+
+insert into dept values(1,'HR')
+insert into dept values(2,'Trainer')
+insert into dept values(3,'Developer')
+insert into dept values(4,'Designer')
+
+select * from dept
+
+--employee(child- foreign key)
+create table emp
+(
+Eid int Primary key,
+Ename varchar(25),
+Did int foreign key references dept(Dno)
+)
+
+insert into emp values(100,'John',1)
+insert into emp values(101,'Peter',1)
+
+--delete
+
+delete from dept where Dno=1
+delete from emp where Did=1
+
+--update
+update dept set Dname='Testing' where Dno=2
+select * from dept
+
+--Demo table
+create table demo
+(
+id int primary key,
+name varchar(25),
+dept varchar(25)
+)
+
+select * from demo
+
+--add a column to demo
+alter table demo add dept int;
+
+--drop a column
+alter table demo drop column dept;
+
+insert into demo values(1,'John',25000)
+insert into demo values(2,'John1',26000)
+insert into demo values(3,'John2',27000)
+insert into demo values(4,'John3',28000)
+
+delete from demo where id=1
+
+truncate table demo
+
+drop table demo
